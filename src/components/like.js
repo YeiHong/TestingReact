@@ -17,10 +17,10 @@ class Like extends Component {
         return (
             <div>
                 <p>Likes: {this.state.likes}</p>
-                <button id="increment" onClick={this.handleIncrement}>
+                <button id="increment" onClick={this.handleIncrement} data-testid="add" >
                     Like
                 </button>
-                <button id="decrement" onClick={this.handleDecrement}>
+                <button id="decrement" onClick={this.handleDecrement} data-testid="rest">
                     {" "}
                     Dislike
                 </button>

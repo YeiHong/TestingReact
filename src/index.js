@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Checkbox from './components/checkbox';
+import Like from './components/like';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Checkbox labelActive="Active" labelInactive="Inactive" />
+  <Like />
 );
 
 // If you want to start measuring performance in your app, pass a function

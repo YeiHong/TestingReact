@@ -10,4 +10,27 @@
  * 3. Que cuando se hace clic en el botón Dislike el número de likes se decrementa en uno.
  */
 
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react";
+import Like from "../like";
+
+describe("like", function () {
+
+    it("El componente muestra en el parrafo el valor 'Likes: 0'.", function () {
+        render(<Like />)
+        expect(screen.getByText("Likes: 0")).toBeInTheDocument();
+    })
+
+    it("Cuando se hace clic en el boton Like, el numero de likes se incrementa en uno.", function () {
+        render(<Like />)
+        const likeButton = screen.getByText("Like")
+        fireEvent.click(likeButton);
+        expect(screen.getByText("Likes: 1")).toBeInTheDocument();
+    })
+
+    it("Cuando se hace clic en el boton Dislike, el numero de likes se decrementa en uno.", function () {
+        render(<Like />)
+        const dislikeButton = screen.getByText("Dislike")
+        fireEvent.click(dislikeButton);
+        expect(screen.getByText("Likes: -1")).toBeInTheDocument();
+    })
+});
